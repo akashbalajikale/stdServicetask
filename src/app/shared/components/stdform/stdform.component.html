@@ -1,0 +1,56 @@
+ <div class="card">
+    <div class="card-body bg-light">
+        <form #stdform="ngForm" (ngSubmit)="OnStdAdd()">
+            <div class="form-group">
+                <label for="fname">First Name*</label>
+                <input required="" type="text" #fname="ngModel" name="fname" id="fname" class="form-control" ngModel>
+
+                <strong *ngIf="fname.touched && fname.hasError('required')" class="text-danger">
+                    fname is required field
+                </strong>
+            </div>
+            <div class="form-group">
+                <label for="lname">last Name*</label>
+                <input required="" type="text" #lname="ngModel" name="lname" id="lname" class="form-control" ngModel>
+
+                <strong *ngIf="lname.touched && lname.hasError('required')" class="text-danger">
+                    last Name is required field
+                </strong>
+            </div>
+            <div class="form-group">
+                <label for="email">email*</label>
+                <input required="" type="text" #email="ngModel" name="email" id="email" class="form-control" ngModel>
+
+                <strong *ngIf="email.touched && email.hasError('required')" class="text-danger">
+                    Invalid email pattern {{"abc@gmail.com"}}
+                </strong>
+
+                
+            </div>
+            <div class="form-group">
+                <label for="contact">contact*</label>
+                <input required="" type="text" #contact="ngModel" name="contact" id="contact" class="form-control" ngModel>
+
+                <strong *ngIf="contact.touched && contact.hasError('required')" class="text-danger">
+                    contact is required field
+                </strong>
+                
+            </div> 
+            
+            
+            <div class="form-group">
+                <label for="isActive">is Active*</label>
+                <select required="" type="text" name="isActive" id="isActive" class="form-control" ngModel 
+                   >
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="form-group float-right">
+                <button type="submit" [disabled]="stdform.invalid" mat-raised-button color="primary">Add student</button>
+            </div>
+            
+        </form>
+    </div>
+ </div>
