@@ -1,38 +1,40 @@
- <table class=" table table-bordered responsive">
-    <thead>
-        <tr>
-            <th>sr No</th>
-            <th>full name</th>
-            <th>email</th>
-            <th>contact</th>
-            <th>isActive</th>
-            <th>Edit</th>
-            <th>remove</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr 
-        [ngClass]="{
-            inActive : !std.isActive
-        }"
-        *ngFor=" let std of stdData; index as i">
-            <td>{{i + 1}}</td>
-            <td>{{std.fname}} {{std.lname}}</td>
-            <td>{{std.email}}</td>
-            <td>{{std.contact}}</td>
-            <td>{{std.isActive}}</td>
-            <td> 
-                <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
-                    <mat-icon>edit</mat-icon>
-                </button>
-            </td>
-            <td>
-                <button 
-                 (click)="OnRemove(std)"
-                mat-mini-fab color="warn" aria-label="Example icon button with a menu icon">
-                    <mat-icon>delete</mat-icon>
-                </button>
-            </td>
-        </tr>
-    </tbody>
- </table>
+ <div class="table-responsive">
+    <table class=" table table-bordered ">
+        <thead>
+            <tr>
+                <th>sr No</th>
+                <th>full name</th>
+                <th>email</th>
+                <th>contact</th>
+                <th>isActive</th>
+                <th>Edit</th>
+                <th>remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr 
+            [ngClass]="{
+                inActive : !std.isActive
+            }"
+            *ngFor=" let std of stdData; index as i">
+                <td>{{i + 1}}</td>
+                <td>{{std.fname}} {{std.lname}}</td>
+                <td>{{std.email}}</td>
+                <td>{{std.contact}}</td>
+                <td>{{std.isActive}}</td>
+                <td> 
+                    <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </td>
+                <td>
+                    <button 
+                     (click)="OnRemove(std)"
+                    mat-mini-fab color="warn" aria-label="Example icon button with a menu icon">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+     </table>
+ </div>
